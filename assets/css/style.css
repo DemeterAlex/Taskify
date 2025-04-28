@@ -1,0 +1,210 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+ 
+  @keyframes levitate {
+    0%, 100%   { transform: translateY(0); }
+    50%        { transform: translateY(-5px); }
+  } 
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
+  
+  .card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 360px;
+    max-width: 90%;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+    box-sizing: border-box;
+  }
+  
+  .card h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333333;
+  }
+  
+  .card form,
+  .card .add-form {
+    width: 100%;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .card label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #444444;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .card input,
+  .card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .card input:focus,
+  .card select:focus {
+    border-color: #1abc9c;
+    outline: none;
+  }
+  
+  .card button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #1abc9c;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .card button:hover {
+    background: #16a085;
+  }
+  
+  .auth-link,
+  .card .login-link {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .auth-link:hover,
+  .card .login-link:hover {
+    color: #95a5a6;
+  }
+  
+  .error {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+  }
+  
+  #logoutBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #e74c3c;
+    color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  
+  #logoutBtn:hover {
+    background: #c0392b;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .add-btn {
+    background: #1abc9c;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .add-btn:hover {
+    background: #16a085;
+  }
+  
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Přepnuto na grid pro rovnoměrné roztažení a check vpravo */
+  .todo-list li {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    column-gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 0.95rem;
+  }
+  
+  .todo-title {
+    text-align: left;
+  }
+  
+  .todo-date {
+    font-size: 0.9rem;
+    color: #555555;
+  }
+  
+  .todo-priority {
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+  
+  .todo-priority.high {
+    color: #e74c3c;
+  }
+  
+  .todo-priority.medium {
+    color: #f1c40f;
+  }
+  
+  .todo-priority.low {
+    color: #2ecc71;
+  }
+  
+  .complete-form {
+    margin: 0;
+    justify-self: end; /* zajišťuje tlačítko vpravo */
+  }
+  
+  .complete-btn {
+    background: none;
+    border: none;
+    color: #1abc9c;
+    font-size: 1rem;
+    padding: 0.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .complete-btn:hover {
+    animation: levitate 0.6s ease-in-out infinite;
+  }
+  
